@@ -77,16 +77,6 @@ cd Commercial-Airplane-Model-Image-Classification
 pip install -r requirements.txt
 ```
 
-### Train the model:
-```sh
-python model_training.py
-```
-
-### Predict an image:
-```sh
-python model_prediction.py --image path_to_image.jpg
-```
-
 ## Future Enhancements
 - Expand dataset with more airplane models
 - Improve model accuracy with hyperparameter tuning
