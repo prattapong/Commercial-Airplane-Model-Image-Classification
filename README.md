@@ -1,21 +1,20 @@
-Commercial Airplane Model Image Classification
+# Commercial Airplane Model Image Classification
 
-Overview
+## Overview
+This project is a deep learning-based image classification model that identifies different commercial airplane models using a Convolutional Neural Network (CNN) based on ResNet50. The model is trained on images of three airplane types: **Airbus A320, Airbus A350, and Boeing 787**.
 
-This project is a deep learning-based image classification model that identifies different commercial airplane models using a Convolutional Neural Network (CNN) based on ResNet50. The model is trained on images of three airplane types: Airbus A320, Airbus A350, and Boeing 787.
+## Dataset
+The dataset is organized into three folders within the `images` directory:
 
-Dataset
+```
+images/
+│── Airbus A320/   # Contains images of Airbus A320 aircraft
+│── Airbus A350/   # Contains images of Airbus A350 aircraft
+│── Boeing 787/    # Contains images of Boeing 787 aircraft
+```
 
-The dataset is organized into three folders within the images directory:
-
-images/Airbus A320/ - Contains images of Airbus A320 aircraft
-
-images/Airbus A350/ - Contains images of Airbus A350 aircraft
-
-images/Boeing 787/ - Contains images of Boeing 787 aircraft
-
-Project Structure
-
+## Project Structure
+```
 ├── images/
 │   ├── Airbus A320/
 │   ├── Airbus A350/
@@ -25,87 +24,76 @@ Project Structure
 ├── best_airplane_model.h5
 ├── requirements.txt
 ├── README.md
+```
 
-Model Training
+## Model Training
+The model is built using **ResNet50** as a feature extractor, with additional fully connected layers for classification. The training pipeline includes:
 
-The model is built using ResNet50 as a feature extractor, with additional fully connected layers for classification. The training pipeline includes:
+- **Data Augmentation:** To enhance generalization
+- **Transfer Learning:** Using a pre-trained ResNet50 model
+- **Checkpointing:** Saving the best model based on validation accuracy
 
-Data Augmentation: To enhance generalization
+### Training Script
+The `model_training.py` script fetches images, preprocesses them, and trains the model. The best-performing model is saved as `best_airplane_model.h5`.
 
-Transfer Learning: Using a pre-trained ResNet50 model
-
-Checkpointing: Saving the best model based on validation accuracy
-
-Training Script: model_training.py
-
+```python
 best_model = train_model(
-    X = X,
-    y = y,
-    batch_size = 8,
-    epochs = 100
+    X = X, y = y, batch_size = 8, epochs = 100
 )
+```
 
-This script fetches images, preprocesses them, and trains the model. The best-performing model is saved as best_airplane_model.h5.
+## Model Prediction
+Once trained, the model can classify new images. The `model_prediction.py` script takes an image as input and outputs the predicted airplane type.
 
-Model Prediction
-
-Once trained, the model can classify new images. The model_prediction.py script takes an image as input and outputs the predicted airplane type.
-
-Example Usage:
-
+### Example Usage:
+```python
 show_prediction(best_model, X, y, index=0, class_labels=["Airbus A320", "Airbus A350", "Boeing 787"])
-
+```
 This function displays the image along with the predicted and actual class labels.
 
-Installation & Requirements
-
+## Installation & Requirements
 Ensure you have the necessary dependencies installed before running the scripts.
 
-Install Requirements:
-
+### Install Requirements:
+```sh
 pip install -r requirements.txt
+```
 
-Dependencies:
+### Dependencies:
+- TensorFlow
+- NumPy
+- Matplotlib
+- scikit-learn
 
-TensorFlow
-
-NumPy
-
-Matplotlib
-
-scikit-learn
-
-How to Run
-
-Clone this repository:
-
+## How to Run
+### Clone this repository:
+```sh
 git clone https://github.com/prattapong/Commercial-Airplane-Model-Image-Classification.git
 cd Commercial-Airplane-Model-Image-Classification
+```
 
-Install dependencies:
-
+### Install dependencies:
+```sh
 pip install -r requirements.txt
+```
 
-Train the model:
-
+### Train the model:
+```sh
 python model_training.py
+```
 
-Predict an image:
-
+### Predict an image:
+```sh
 python model_prediction.py --image path_to_image.jpg
+```
 
-Future Enhancements
+## Future Enhancements
+- Expand dataset with more airplane models
+- Improve model accuracy with hyperparameter tuning
+- Deploy as a web application for real-time classification
 
-Expand dataset with more airplane models
+## License
+This project is licensed under the **MIT License**.
 
-Improve model accuracy with hyperparameter tuning
-
-Deploy as a web application for real-time classification
-
-License
-
-This project is licensed under the MIT License.
-
-Author
-
+## Author
 [Your Name]
