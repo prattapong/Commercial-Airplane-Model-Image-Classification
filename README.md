@@ -19,8 +19,7 @@ images/
 │   ├── Airbus A320/
 │   ├── Airbus A350/
 │   ├── Boeing 787/
-├── model_training.py
-├── model_prediction.py
+├── image_classification.ipynb
 ├── best_airplane_model.h5
 ├── requirements.txt
 ├── README.md
