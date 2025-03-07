@@ -34,7 +34,7 @@ The model is built using **ResNet50** as a feature extractor, with additional fu
 - **Checkpointing:** Saving the best model based on validation accuracy
 
 ### Training Script
-The `model_training.py` script fetches images, preprocesses them, and trains the model. The best-performing model is saved as `best_airplane_model.h5`.
+The `image_classification.ipynb` script fetches images, preprocesses them, and trains the model. The best-performing model is saved as `best_airplane_model.h5`.
 
 ```python
 best_model = train_model(
@@ -43,7 +43,7 @@ best_model = train_model(
 ```
 
 ## Model Prediction
-Once trained, the model can classify new images. The `model_prediction.py` script takes an image as input and outputs the predicted airplane type.
+Once trained, the model can classify new images. The `image_classification.ipynb` script takes an image as input and outputs the predicted airplane type.
 
 ### Example Usage:
 ```python
@@ -91,9 +91,3 @@ python model_prediction.py --image path_to_image.jpg
 - Expand dataset with more airplane models
 - Improve model accuracy with hyperparameter tuning
 - Deploy as a web application for real-time classification
-
-## License
-This project is licensed under the **MIT License**.
-
-## Author
-[Your Name]
