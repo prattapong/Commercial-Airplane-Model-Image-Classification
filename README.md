@@ -19,8 +19,7 @@ images/
 │   ├── Airbus A320/
 │   ├── Airbus A350/
 │   ├── Boeing 787/
-├── model_training.py
-├── model_prediction.py
+├── image_classification.ipynb
 ├── best_airplane_model.h5
 ├── requirements.txt
 ├── README.md
@@ -75,16 +74,6 @@ cd Commercial-Airplane-Model-Image-Classification
 ### Install dependencies:
 ```sh
 pip install -r requirements.txt
-```
-
-### Train the model:
-```sh
-python model_training.py
-```
-
-### Predict an image:
-```sh
-python model_prediction.py --image path_to_image.jpg
 ```
 
 ## Future Enhancements
